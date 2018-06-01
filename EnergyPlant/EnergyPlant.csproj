@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CA30F7E-AB22-4CE8-8581-4DF28B658974}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{B793DBBA-711F-49F1-ADEF-C23C65B26238}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MainApp</RootNamespace>
-    <AssemblyName>MainApp</AssemblyName>
+    <RootNamespace>EnergyPlant</RootNamespace>
+    <AssemblyName>EnergyPlant</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,18 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Objects\ComponentsConcrete\EP_EEG_Before_2012.cs" />
+    <Compile Include="Objects\Components\EnergyPlantAbstract.cs" />
+    <Compile Include="Objects\DecoratorsConcrete\DirectMarketeerBonusDecorator.cs" />
+    <Compile Include="Objects\DecoratorsConcrete\RemoteControlBonusDecorator.cs" />
+    <Compile Include="Objects\DecoratorsConcrete\RepoweringBonusDecorator.cs" />
+    <Compile Include="Objects\Decorators\EnergyPlantDecorator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EnergyPlant\EnergyPlant.csproj">
-      <Project>{b793dbba-711f-49f1-adef-c23c65b26238}</Project>
-      <Name>EnergyPlant</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
